@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Müzik dünyasındaki en son gelişmeleri, pop, rock, jazz ve klasik müziği keşfetmek için blogumuza katılın!">
+  <meta name="keywords" content="Müzik, Pop, Rock, Jazz, Klasik, Blog">
+  <meta name="author" content="Nurhanım">
+  <title>Müzik ve Hayat Blogu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #f8f9fa; /* Hafif gri arka plan */
+      color: #333; /* Ana metin rengi */
+    }
+
+    .navbar {
+      background-color: #2c3e50; /* Koyu gri-mavi ton */
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .navbar ul li {
+      margin-right: 20px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #3498db; /* Açık mavi */
+    }
+
+    .content {
+      padding: 20px;
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .hero {
+      text-align: center;
+      background-color: #ecf0f1; /* Açık gri arka plan */
+      padding: 50px 0;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #2c3e50; /* Koyu gri-mavi ton */
+    }
+
+    .post {
+      background-color: #eaeaea;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .post:hover {
+      background-color: #dcdcdc;
+    }
+
+    .comments input, .comments textarea, .survey input, .survey select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .comments button, .survey button {
+      padding: 10px 15px;
+      background-color: #3498db; /* Açık mavi */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .comments button:hover, .survey button:hover {
+      background-color: #2980b9; /* Daha koyu mavi */
+    }
+
+    .footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #3498db;
+    }
+
+    .categories {
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .categories h2 {
+      color: #2c3e50;
+    }
+
+    .categories ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .categories li {
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    .categories li span {
+      font-weight: bold;
+    }
+
+    /* Responsive Tasarım */
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar ul li {
+        margin: 10px 0;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Anket Bölümü Stilleri */
+    #survey {
+      background-color: #ffffff; /* Beyaz arka plan */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px; /* Üstten boşluk */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">Müzik ve Hayat</h1>
+    <nav>
+      <ul>
+        <li><a onclick="showSection('home')">Anasayfa</a></li>
+        <li><a onclick="showSection('categories')">Kategoriler</a></li>
+        <li><a onclick="showSection('about')">Hakkında</a></li>
+        <li><a onclick="showSection('survey')">Anket</a></li> <!-- Anket kısmına link ekledim -->
+        <li><a onclick="showSection('contact')">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- İçerik Bölümleri -->
+  <div id="home" class="content active">
+    <section class="hero">
+      <h2>Müziğin Ruhunu Keşfedin</h2>
+      <p>Hoş geldiniz! Müzik dünyasına adım atmak üzeresiniz. Pop, rock, caz ve klasik müziğin büyülü dünyasını keşfederken, çeşitli müzik türleri hakkında derinlemesine bilgiler edinecek, ilham verici sanatçıları tanıyacak ve en sevdiklerinizle paylaşabileceğiniz içerikler bulacaksınız.</p>
+      <p>Bu blog, müziğin hayatımızdaki yerini, farklı türlerdeki müziğin kültürel etkilerini ve müziğin birleştirici gücünü anlamak için oluşturulmuştur. Şimdi başlayalım!</p>
+    </section>
+
+    <section class="posts">
+      <h2>Son Yazılar</h2>
+      <article class="post">
+        <h3>Pop Müziğin Gelişimi</h3>
+        <p>Pop müzik, yıllar içinde değişen stiller ve kültürel etkilerle gelişmiştir. 1950'lerde başlayan bu tür, Michael Jackson, Madonna ve Britney Spears gibi sanatçılarla zirveye ulaşmıştır. Günümüzde, pop müzik elektronik müzik ve hip-hop gibi diğer türlerle birleştirilerek yenilikçi bir hal almıştır.</p>
+        <p>Örnek vermek gerekirse, Hadise'nin "Sıfır Tolerans" parçası, duygusal temaları ve akılda kalıcı melodisiyle dikkat çekerken, Murat Dalkılıç'ın "Lüzumsuz Savaş" şarkısı enerjik yapısıyla dinleyicileri coşturur. Ayrıca, Tarkan'ın "Şımarık" parçası, dinleyicilere eğlenceli bir deneyim sunarak pop müziğin enerjisini mükemmel bir şekilde yansıtmaktadır.</p>
+      </article>
+      <article class="post">
+        <h3>Jazz Müziğin Doğuşu</h3>
+        <p>Jazz, 20. yüzyılın başlarında Amerika'da ortaya çıkmıştır. Özellikle Louis Armstrong, Duke Ellington ve Ella Fitzgerald gibi isimlerle büyüyen bu tür, özgürlüğü ve doğaçlamayı yüceltir. Günümüzde jazz müziği, funk ve rock gibi diğer türlerle birleşerek farklı alt türler oluşturmuştur.</p>
+        <p>Türk jazz müziği için önemli isimlerden biri, İlhan İrem'dir. "Mavi Turna" adlı eseri, geleneksel Türk müziği ile jazz'ı harmanlayarak benzersiz bir melodi sunmaktadır. Ayrıca, Candan Erçetin'in "Kır Zincirlerini" adlı parçası, jazz ve Türk müziğini bir araya getirerek müzikseverlere farklı bir deneyim sunmaktadır.</p>
+      </article>
+    </section>
+  </div>
+
+  <div id="categories" class="content categories">
+    <h2>Kategoriler</h2>
+    <ul>
+      <li><span>Pop Müzik:</span> Pop müzik, geniş bir dinleyici kitlesine hitap eden ve genellikle melodik bir yapıya sahip olan bir türdür. Tarkan, Sezen Aksu ve Ajda Pekkan gibi sanatçılar pop müziğin önde gelen isimleridir.</li>
+      <li><span>Rock Müzik:</span> Rock, güçlü gitar riffleri ve enerjik vokalleriyle tanınan, genellikle isyan ve özgürlük temalarını işleyen bir müzik türüdür. Queen, Nirvana ve Metallica gibi gruplar rock müziğin efsaneleri arasında yer almaktadır.</li>
+      <li><span>Jazz Müzik:</span> Jazz, doğaçlama ve özgürlük vurgusu yapan bir müzik türüdür. Louis Armstrong ve Ella Fitzgerald gibi sanatçılarla özdeşleşmiştir. Türkiye'de de caz müziği büyük bir ilgi görmektedir. Örneğin, "Kır Zincirlerini" adlı parça, jazz ile Türk müziğinin birleşimini yansıtır.</li>
+      <li><span>Klasik Müzik:</span> Klasik müzik, Batı müziği geleneğinde yüzyıllar boyunca gelişmiş bir türdür. Mozart, Beethoven ve Bach gibi ustalarla bilinir. Klasik müzik, genellikle karmaşık yapılar ve derin duygular barındırır. "Piyano Sonatı No. 14" (Ay Işığı Sonatı) gibi eserler, klasik müziğin en güzel örneklerindendir.</li>
+    </ul>
+  </div>
+
+  <div id="survey" class="content">
+    <h2>Anket</h2>
+    <p>Müzik tercihlerinizi öğrenmek için aşağıdaki anketi doldurabilirsiniz:</p>
+    <form class="survey" onsubmit="handleSurveySubmit(event)">
+      <label for="favoriteGenre">En sevdiğiniz müzik türü nedir?</label>
+      <select id="favoriteGenre" required>
+        <option value="">Seçiniz...</option>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <option value="jazz">Jazz</option>
+        <option value="classical">Klasik</option>
+      </select>
+
+      <label for="concertFrequency">Yılda kaç kez konserlere gidersiniz?</label>
+      <select id="concertFrequency" required>
+        <option value="">Seçiniz...</option>
+        <option value="never">Hiç</option>
+        <option value="1-2">1-2 kez</option>
+        <option value="3-5">3-5 kez</option>
+        <option value="moreThan5">5'ten fazla</option>
+      </select>
+
+      <label for="artistRecommendation">Son dönemde dinlediğiniz bir sanatçı önerisi:</label>
+      <input type="text" id="artistRecommendation" placeholder="Sanatçı adı" required>
+
+      <button type="submit">Gönder</button>
+    </form>
+    <p id="surveyThankYouMessage" style="display: none; color: #2ecc71;">Anketiniz başarıyla gönderildi!</p>
+  </div>
+
+  <div id="about" class="content">
+    <h2>Hakkında</h2>
+    <p>Müzik ve Hayat Blogu, müziğin hayatımızdaki etkilerini keşfetmek ve müzikle ilgili içerikler sunmak amacıyla kurulmuştur. Pop, rock, jazz ve klasik müzik gibi farklı türlerdeki müziklerin derinliklerine inmeyi, müziğin ruhunu ve toplumsal etkilerini tartışmayı hedefliyoruz.</p>
+    <p>Blogumuzda, müzik endüstrisindeki en son gelişmeleri takip edebilir, sanatçılarla yapılan röportajlara ulaşabilir ve yeni müzikler keşfedebilirsiniz. Siz değerli okuyucularımızla birlikte müzik yolculuğuna çıkmayı sabırsızlıkla bekliyoruz.</p>
+  </div>
+
+  <div id="contact" class="content">
+    <h2>İletişim</h2>
+    <p>Bizimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz:</p>
+    <form class="comments" onsubmit="handleFormSubmit(event)">
+      <input type="text" placeholder="Adınız" required>
+      <input type="email" placeholder="E-posta adresiniz" required>
+      <textarea placeholder="Mesajınız" rows="5" required></textarea>
+      <button type="submit">Gönder</button>
+    </form>
+    <p id="thankYouMessage" style="display: none; color: #2ecc71;">Mesajınız başarıyla gönderildi!</p>
+  </div>
+
+  <footer class="footer">
+    <p>© 2024 Müzik ve Hayat Blogu - Tüm Hakları Saklıdır.</p>
+    <p><a href="#home" onclick="showSection('home')">Anasayfa</a> | <a href="#categories" onclick="showSection('categories')">Kategoriler</a> | <a href="#about" onclick="showSection('about')">Hakkında</a> | <a href="#contact" onclick="showSection('contact')">İletişim</a></p>
+  </footer>
+
+  <script>
+    function showSection(section) {
+      const sections = document.querySelectorAll('.content');
+      sections.forEach(s => {
+        s.classList.remove('active');
+      });
+      document.getElementById(section).classList.add('active');
+    }
+
+    function handleSurveySubmit(event) {
+      event.preventDefault(); // Formun varsayılan davranışını engelle
+      const message = document.getElementById('surveyThankYouMessage');
+      message.style.display = 'block'; // Teşekkür mesajını göster
+      setTimeout(() => {
+        message.style.display = 'none'; // Teşekkür mesajını gizle
+      }, 3000); // 3 saniye sonra gizle
+      event.target.reset(); // Formu sıfırla
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Formun varsayılan davranışını engelle
+      const message = document.getElementById('thankYouMessage');
+      message.style.display = 'block'; // Teşekkür mesajını göster
+      setTimeout(() => {
+        message.style.display = 'none'; // Teşekkür mesajını gizle
+      }, 3000); // 3 saniye sonra gizle
+      event.target.reset(); // Formu sıfırla
+    }
+  </script>
+</body>
+</html>
+
+
+
